@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>How To Family Search</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="blog-masthead">
+  <div class="container">
+    <nav class="blog-nav">
+      <%= link_to "Home", root_url, class: "blog-nav-item #{@nav == 'home' ? 'active' : ''}" %>
+      <%= link_to "Guides", family_search_path, class: "blog-nav-item #{@nav == 'guides' ? 'active' : ''}" %>
+      <%= link_to "Resources", "#", class: "blog-nav-item #{@nav == 'resources' ? 'active' : ''}" %>
+      <%= link_to "About", "#", class: "blog-nav-item #{@nav == 'about' ? 'active' : ''}" %>
+    </nav>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 blog-main">
+      <%= yield %>
+    </div>
+    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+      <div class="sidebar-module">
+        <h4>Guides</h4>
+        <ol class="list-unstyled">
+          <li><%= link_to "How to FamilySearch.org", family_search_path %></li>
+          <li><%= link_to "How to Ancestry.com", ancestry_path %></li>
+          <li><%= link_to "How to FindMyPast.com", find_my_past_path %></li>
+          <li><%= link_to "How to MyHeritage.com", my_heritage_path %></li>
+          <li><%= link_to "How to AmericanAncestors.org", american_ancestors_path %></li>
+          <li><%= link_to "How to Puzzilla.org", puzzilla_path %></li>
+          <li><%= link_to "How to use Hope Chest", hope_chest_path %></li>
+          <li><%= link_to "How to FindAGrave.com", find_a_grave_path %></li>
+          <li><%= link_to "How to BillionGraves.com", billion_graves_path %></li>
+        </ol>
+      </div>
+      <div class="sidebar-module">
+        <h4>Resources</h4>
+        <ol class="list-unstyled">
+          <li><a href="http://www.familysearch.org">FamilySearch.org</a></li>
+          <li><a href="http://www.ancestry.com">Ancestry.com</a></li>
+          <li><a href="http://www.puzzilla.org">Puzzilla.org</a></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="blog-footer">
+  <p>Want to contribute to this website? <a href="https://www.github.com/cavneb/how_to_family_search">GitHub</a></p>
+</footer>
+
+</body>
+</html>
