@@ -23,6 +23,10 @@ class HomeController < ApplicationController
     @nav = 'guides'
   end
 
+  def find_a_record
+    @nav = 'guides'
+  end
+
   def puzzilla
     @nav = 'guides'
   end

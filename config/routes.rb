@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get 'find_my_past' => 'home#find_my_past'
     get 'my_heritage' => 'home#my_heritage'
     get 'american_ancestors' => 'home#american_ancestors'
+    get 'find_a_record' => 'home#find_a_record'
     get 'puzzilla' => 'home#puzzilla'
     get 'hope_chest' => 'home#hope_chest'
     get 'find_a_grave' => 'home#find_a_grave'
