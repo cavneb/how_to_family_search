@@ -1,0 +1,19 @@
+<h1 class="page-header">
+  <%= link_to "New Episode", new_admin_episode_path, class: "btn btn-primary pull-right" %>
+  Episodes
+</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @episodes.each do |episode| %>
+      <tr>
+        <td><%= episode.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

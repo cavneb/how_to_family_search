@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'home#index'
+
+  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 
   scope :guides do
     get 'family_search' => 'home#family_search'
@@ -13,6 +16,13 @@ Rails.application.routes.draw do
     get 'find_a_grave' => 'home#find_a_grave'
     get 'billion_graves' => 'home#billion_graves'
   end
+
+  namespace :admin do
+    resources :users
+    resources :episodes
+  end
+
+  root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

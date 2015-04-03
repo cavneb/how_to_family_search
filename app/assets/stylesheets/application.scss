@@ -1,7 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500);
+
+
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
 @import "home";
+
+h1,h2,h3,h4,h5,h6,p,li,span {
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica;
+}
 
 .img-center {
   margin: 0 auto;

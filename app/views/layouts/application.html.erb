@@ -12,26 +12,23 @@
 </head>
 <body>
 
-<!--
-<div class="blog-masthead">
-  <div class="container">
-    <nav class="blog-nav">
-      <%= link_to "Home", root_url, class: "blog-nav-item #{@nav == 'home' ? 'active' : ''}" %>
-      <%= link_to "Guides", family_search_path, class: "blog-nav-item #{@nav == 'guides' ? 'active' : ''}" %>
-      <%= link_to "Resources", "#", class: "blog-nav-item #{@nav == 'resources' ? 'active' : ''}" %>
-      <%= link_to "About", "#", class: "blog-nav-item #{@nav == 'about' ? 'active' : ''}" %>
-    </nav>
-  </div>
-</div>
--->
-
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 blog-main">
+    <div class="col-sm-8">
       <%= yield %>
     </div>
-    <!--
-    <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+    <div class="col-sm-3 col-sm-offset-1">
+      <div class="sidebar-module">
+        <% if current_user %>
+          Welcome <%= current_user.first_name %>&nbsp;&nbsp;
+          <%= link_to "Logout", signout_path, class: "btn btn-xs btn-default" %>
+        <% else %>
+          <%= link_to "/auth/facebook", class: "btn btn-sm btn-primary" do %>
+            <span class="fa fa-facebook"></span> Login via Facebook
+          <% end %>
+        <% end %>
+      </div>
+      <!--
       <div class="sidebar-module">
         <h4>Guides</h4>
         <ol class="list-unstyled">
@@ -46,6 +43,7 @@
           <li><%= link_to "How to BillionGraves.com", billion_graves_path %></li>
         </ol>
       </div>
+      -->
       <div class="sidebar-module">
         <h4>Resources</h4>
         <ol class="list-unstyled">
@@ -55,7 +53,6 @@
         </ol>
       </div>
     </div>
-    -->
   </div>
 </div>
 
