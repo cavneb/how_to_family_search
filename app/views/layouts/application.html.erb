@@ -12,6 +12,8 @@
 </head>
 <body>
 
+<div id="fb-root"></div>
+
 <div class="container">
   <div class="row">
     <div class="col-sm-8">
@@ -19,14 +21,7 @@
     </div>
     <div class="col-sm-3 col-sm-offset-1">
       <div class="sidebar-module">
-        <% if current_user %>
-          Welcome <%= current_user.first_name %>&nbsp;&nbsp;
-          <%= link_to "Logout", signout_path, class: "btn btn-xs btn-default" %>
-        <% else %>
-          <%= link_to "/auth/facebook", class: "btn btn-sm btn-primary" do %>
-            <span class="fa fa-facebook"></span> Login via Facebook
-          <% end %>
-        <% end %>
+        <fb:login-button data-auto-logout-link="true" data-show-faces="true" scope="public_profile,email,user_birthday" onlogin="checkLoginState();"></fb:login-button>
       </div>
       <!--
       <div class="sidebar-module">
